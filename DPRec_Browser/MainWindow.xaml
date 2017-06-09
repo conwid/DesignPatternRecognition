@@ -1,0 +1,30 @@
+﻿<Window x:Class="DPRec_Browser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">          
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0">
+            <MenuItem Height="20" Header="Open file" Click="MenuItem_Click"></MenuItem>
+        </Menu>
+        
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBox x:Name="tbSearch" />
+            <TreeView Grid.Column="0" Grid.Row="1" x:Name="tv1" SelectedItemChanged="tv1_SelectedItemChanged" />
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" Name="contentGrid">
+
+        </Grid>
+    </Grid>
+</Window>

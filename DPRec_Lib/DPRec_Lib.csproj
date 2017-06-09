@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E954E3AA-8B9A-4C8D-B67D-FEB88E866DAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DPRec_Lib</RootNamespace>
+    <AssemblyName>DPRec_Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.0.6.4033103-beta\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.0.6.4033103-beta\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.0.6.4033103-beta\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.0.6.4033103-beta\lib\net45\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.1.20-beta\lib\portable-net45+win8\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>..\packages\Microsoft.Bcl.Metadata.1.0.9-alpha\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSharpImplementation\CSharpField.cs" />
+    <Compile Include="CSharpImplementation\CSharpMethod.cs" />
+    <Compile Include="CSharpImplementation\CSharpMethodParameter.cs" />
+    <Compile Include="CSharpImplementation\CSharpNamedType.cs" />
+    <Compile Include="CSharpImplementation\CSharpModelBuilder.cs" />
+    <Compile Include="Helpers\TypeComparer.cs" />
+    <Compile Include="Logging\ConsoleLogger.cs" />
+    <Compile Include="Logging\CustomizableLogger.cs" />
+    <Compile Include="Logging\DebugLogger.cs" />
+    <Compile Include="Logging\FileLogger.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LoggerProvider.cs" />
+    <Compile Include="Model\CallGraphBase.cs" />
+    <Compile Include="Model\CallGraphNodeBase.cs" />
+    <Compile Include="Model\FieldBase.cs" />
+    <Compile Include="Model\GenericTypeParameterBase.cs" />
+    <Compile Include="Model\BaseExtensions.cs" />
+    <Compile Include="Model\ICodeElement.cs" />
+    <Compile Include="Model\IComplexCodeElement.cs" />
+    <Compile Include="Model\IMethodParameter.cs" />
+    <Compile Include="Model\MethodBase.cs" />
+    <Compile Include="Model\MethodParameterBase.cs" />
+    <Compile Include="Model\NamedTypeBase.cs" />
+    <Compile Include="Model\VisiblilityModifierBase.cs" />
+    <Compile Include="Model\ICallGraph.cs" />
+    <Compile Include="Model\ICallGraphNode.cs" />
+    <Compile Include="Model\IField.cs" />
+    <Compile Include="Model\IGenericTypeParameter.cs" />
+    <Compile Include="Model\IMethod.cs" />
+    <Compile Include="Model\INamedType.cs" />
+    <Compile Include="Model\IVisibilityModifier.cs" />
+    <Compile Include="Profiling\CustomizableProfiler.cs" />
+    <Compile Include="Profiling\NullProfiler.cs" />
+    <Compile Include="Profiling\ProfilerService.cs" />
+    <Compile Include="Profiling\IProfiler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recognition\ChainOfResponsibility\ChainOfResponsiblityComplexCriterion.cs" />
+    <Compile Include="Recognition\ChainOfResponsibility\ChainOfResponsiblityRecognizer.cs" />
+    <Compile Include="Recognition\Composite\CollectionCriterion.cs" />
+    <Compile Include="Recognition\Composite\CompositeRecognizer.cs" />
+    <Compile Include="Recognition\Decorator\DecoratorComplexCriterio.cs" />
+    <Compile Include="Recognition\Decorator\DecoratorRecognizer.cs" />
+    <Compile Include="Recognition\Decorator\NotExceptionClassCriterion.cs" />
+    <Compile Include="Recognition\FactoryMethod\FactoryMethodRecognizer.cs" />
+    <Compile Include="Recognition\FactoryMethod\OverrideCriterion.cs" />
+    <Compile Include="Recognition\FactoryMethod\ReturntypeCriterion.cs" />
+    <Compile Include="CSharpImplementation\CSharpRecognitionContext.cs" />
+    <Compile Include="Recognition\Mediator\MediatorComplexCriterion.cs" />
+    <Compile Include="Recognition\Mediator\MediatorRecognizer.cs" />
+    <Compile Include="Recognition\Model\ICriterion.cs" />
+    <Compile Include="Recognition\Model\PatternRecognizerBase.cs" />
+    <Compile Include="Recognition\Model\RecognitionContext.cs" />
+    <Compile Include="Recognition\Proxy\ProxyComplexCriterion.cs" />
+    <Compile Include="Recognition\Proxy\ProxyRecognizer.cs" />
+    <Compile Include="Recognition\Singleton\FieldCriterion.cs" />
+    <Compile Include="Recognition\Singleton\PrivateCtorCriterion.cs" />
+    <Compile Include="Recognition\Singleton\SingletonRecognizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JavaImplementation\TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

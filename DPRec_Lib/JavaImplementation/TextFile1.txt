@@ -1,0 +1,2 @@
+﻿Ide kerülhetne a Java implementáció, ha lenne.
+De nem lesz, mert a Java rossz. Nagyon rossz.

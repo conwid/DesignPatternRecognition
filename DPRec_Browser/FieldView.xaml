@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="DPRec_Browser.FieldView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:self="clr-namespace:DPRec_Browser"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <self:TypeToStringConverter x:Key="TypeConverter" />
+        <self:MethodToStringConverter x:Key="MethodConverter" />
+        <self:VisibilityToStringConverter x:Key="VisConverter" />
+    </UserControl.Resources>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0">Name</TextBlock>
+        <TextBlock Text="{Binding Name}" Grid.Row="0" Grid.Column="1" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0">Type</TextBlock>
+        <TextBlock Text="{Binding Type, Converter={StaticResource TypeConverter}}" Grid.Row="1" Grid.Column="1" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0">Visiblity</TextBlock>
+        <TextBlock Text="{Binding Visibility, Converter={StaticResource VisConverter}}" Grid.Row="2" Grid.Column="1" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0">IsStatic</TextBlock>
+        <TextBlock Text="{Binding IsStatic}" Grid.Row="3" Grid.Column="1" />
+
+
+        <TextBlock Grid.Row="4" Grid.Column="0">Auto-implemented</TextBlock>
+        <TextBlock Text="{Binding AutoImplemented}" Grid.Row="4" Grid.Column="1" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0">Parent</TextBlock>
+        <TextBlock Text="{Binding Parent, Converter={StaticResource TypeConverter}}" Grid.Row="5" Grid.Column="1" />
+        
+        <TextBlock Grid.Row="6" Grid.Column="0">IsInitializedOnce</TextBlock>
+        <TextBlock Text="{Binding IsInitializedOnce}" Grid.Row="6" Grid.Column="1" />
+
+        <TextBlock Grid.Row="7" Grid.Column="0">IsInitializedOnCreation</TextBlock>
+        <TextBlock Text="{Binding IsInitializedOnCreation}" Grid.Row="7" Grid.Column="1" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0">Directly returning methods</TextBlock>
+        <ListView ItemsSource="{Binding DirectlyReturningMethods}" Grid.Row="8" Grid.Column="1" />
+    </Grid>
+</UserControl>
